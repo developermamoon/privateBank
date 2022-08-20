@@ -1,5 +1,11 @@
+body{
+    background-image: url('bank.jpg');
+    background-position: center;
+    background-size: cover;
+}
 input[type=text]{
     width: 75%;
+    border: 0;
 }
  input:focus {
      outline: none;
