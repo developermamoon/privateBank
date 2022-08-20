@@ -1,0 +1,29 @@
+input[type=text]{
+    width: 75%;
+}
+ input:focus {
+     outline: none;
+ }
+
+ /*------------------- tab view  ---------------*/
+
+ @media only screen and (min-width: 577px) and (max-width: 990px){
+input[type=text] {
+        width:100%;
+    }
+
+    button {
+        margin: auto;
+    }
+   
+ }
+
+/*------------------- Mobile view  ---------------*/
+@media only screen and (max-width: 576px){
+    input[type=text] {
+        width: auto;
+    }
+    button{
+        margin: auto;
+    }
+}
