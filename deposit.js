@@ -4,8 +4,17 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
     const UserDeposit = document.getElementById('user-deposit');
     const UserDepositAmountString = UserDeposit.value;
 
+    
     //user deposit amount convert to number
     const UserDepositAmountValue = parseFloat(UserDepositAmountString);
+
+    UserDeposit.value = '';
+    
+    // checking validity of user input 
+    if(isNaN(UserDepositAmountValue)){
+        alert("Deposit an Amount");
+        return;
+    }
     
     // step2 getting previous deposit 
     const previousDeposit = document.getElementById('previous-deposit');
@@ -15,7 +24,7 @@ document.getElementById('deposit-btn').addEventListener('click', function(){
 
     // step3 updating new deposit value and clearning the value in the input field
     previousDeposit.innerText = previousDepositValue + UserDepositAmountValue; //calculation part
-    UserDeposit.value ='';
+    
 
     //step 4 adding the deposit money to total balance
     const totalBalance = document.getElementById('total-balance');
