@@ -10,16 +10,25 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
     const previousWithdrawAmountString =previousWithdraw.innerText;
     const previousWithdrawAmount = parseFloat(previousWithdrawAmountString);
 
-    // setting userWithdrawAmount to previousWithdraw 
-
-
-    previousWithdraw.innerText= previousWithdrawAmount+userWithdrawAmount;
-    userWithdraw.value ='';
 
     // setting the user withdraw into the total balance 
     const totalBalance = document.getElementById('total-balance'); //---------
     const totalBalanceValueString = totalBalance.innerText;
     const totalBalanceValue = parseFloat(totalBalanceValueString);
+    userWithdraw.value ='';
+    
+    // condition 
+    if (userWithdrawAmount > totalBalanceValue) {
+        alert("You Do not Have Enough Money to withdraw");
+        return;
+    }
+    
+    // setting userWithdrawAmount to previousWithdraw 
+    previousWithdraw.innerText= previousWithdrawAmount+userWithdrawAmount;
+
+    
+
+    
     
     const totalBalanceNew = totalBalanceValue - userWithdrawAmount;
     totalBalance.innerText = totalBalanceNew;
