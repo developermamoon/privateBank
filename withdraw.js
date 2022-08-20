@@ -18,6 +18,12 @@ document.getElementById('withdraw-btn').addEventListener('click', function(){
     userWithdraw.value ='';
     
     // condition 
+    if(isNaN(userWithdrawAmount)){
+        alert("Invalid Input");
+        return;
+    }
+
+
     if (userWithdrawAmount > totalBalanceValue) {
         alert("You Do not Have Enough Money to withdraw");
         return;
